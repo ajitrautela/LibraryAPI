@@ -94,7 +94,7 @@ app.UseExceptionHandler(appError =>
 {
     appError.Run(async context =>
     {
-        context.Response.StatusCode = 500;
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
         context.Response.ContentType = "application/json";
 
         var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
